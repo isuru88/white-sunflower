@@ -8,7 +8,7 @@
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script>
 	  var socket = io();
-	  socket.on('trigger', function(msg){
+	  socket.on('state', function(msg){
 	    if(msg.occupied) {
 		  $('#message').replaceWith('<div id="message" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>&nbsp;<strong>Available</strong></div>');
 		} else {

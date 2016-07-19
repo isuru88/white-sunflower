@@ -38,7 +38,7 @@ http.listen(80, function(){
 
 io.on('connection', function(socket) {
   console.log('a user connected');
-  io.emit('trigger', 'Hello');
+  io.emit('state', 'Hello');
   
   socket.on('disconnect', function() {
     console.log('user disconnected');
