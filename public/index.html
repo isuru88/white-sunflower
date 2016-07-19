@@ -10,23 +10,21 @@
 	  var socket = io();
 	  socket.on('state', function(msg){
 	    if(msg.occupied) {
-		  $('#message').replaceWith('<div id="message" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>&nbsp;<strong>Available</strong></div>');
+		  $('#message').replaceWith('<h1 id="message" class="jumbotron alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>&nbsp;<strong>Occupied</strong></h1>');
 		} else {
-		  $('#message').replaceWith('<div id="message" class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;<strong>Available</strong></div>');
+		  $('#message').replaceWith('<h1 id="message" class="jumbotron alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;<strong>Available</strong></h1>');
 		}
 	  });
 	</script>
   </head>
   <body>
     <div class="container">
-	<div class="jumbotron">
-	  <h1>White Sunflower</h1>
-	  <div id="message" class="alert alert-success" role="alert">
-	    <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-		&nbsp;
-		<strong>Available</strong>
-	  </div>
-	</div>	    
+	<h1>White Sunflower</h1>
+    <h1 id="message" class="jumbotron alert alert-success" role="alert">
+	  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+	  &nbsp;
+	  <strong>Available</strong>
+    </h1>
 	</div>	    
   </body>
 </html>
