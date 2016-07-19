@@ -2,17 +2,31 @@
 <html>
   <head>
     <title>White Sunflower</title>  
-	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>	
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+	<script src="lib/socket.io-1.4.5.js"></script>
+	<script src="lib/jquery-1.11.1.js"></script>		
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script>
-		var socket = io();
-		socket.on('trigger', function(msg){
-			$('#messages').append($('<li>').text(msg));
-		});
+	  var socket = io();
+	  socket.on('trigger', function(msg){
+	    if(msg.occupied) {
+		  $('#message').replaceWith('<div id="message" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>&nbsp;<strong>Available</strong></div>');
+		} else {
+		  $('#message').replaceWith('<div id="message" class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;<strong>Available</strong></div>');
+		}
+	  });
 	</script>
   </head>
   <body>
-	<h1>White Sunflower</h1>
-    <ul id="messages"></ul>    
+    <div class="container">
+	<div class="jumbotron">
+	  <h1>White Sunflower</h1>
+	  <div id="message" class="alert alert-success" role="alert">
+	    <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+		&nbsp;
+		<strong>Available</strong>
+	  </div>
+	</div>	    
+	</div>	    
   </body>
 </html>
